@@ -6,7 +6,7 @@
 
 <style scoped>
 .time {
-    font-size: 3.25rem !important;
+    font-size: 3rem !important;
     font-weight: 800 !important;
 }
 </style>

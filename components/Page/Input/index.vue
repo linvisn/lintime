@@ -4,12 +4,12 @@ const value = defineModel('value')
 </script>
 
 <template>
-    <span class="input-item fs-3 col-3">
-        <div class="d-flex align-items-end justify-content-center row-gap-1 column-gap-5 px-2 fs-5 row">
-            <span class="opacity-50 col-12 col-lg-6">
+    <span class="input-item fs-3 col-4">
+        <div class="d-flex align-items-end justify-content-center row-gap-1 column-gap-5 px-1 px-lg-3 fs-6 row">
+            <span class="opacity-50 col-12 col-lg-5">
                 <slot />
             </span>
-            <span class="reset-value col-10 col-lg-3 py-1 text-center" v-if="!isStarted" @click="value = 0">
+            <span class="reset-value col-12 col-lg-4 py-1 text-center" v-if="!isStarted" @click="value = 0">
                 <i class="bi bi-arrow-clockwise"></i>
             </span>
         </div>

@@ -40,6 +40,7 @@ const formatTime = (time) => {
 }
 const startStopwatch = () => {
     isStarted.value = true
+    isPaused.value = false
     startTime = Date.now()
     stopwatch = setInterval(() => {
         if(!isPaused.value) {
