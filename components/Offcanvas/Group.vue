@@ -63,6 +63,6 @@ const defaultTheme = useStorage('defaultTheme', 'Default')
         <OffcanvasText><OffcanvasLink link="https://icons.getbootstrap.com/">Bootstrap Icons</OffcanvasLink> <i class="devicon-bootstrap-plain"></i></OffcanvasText>
         <OffcanvasText><OffcanvasLink link="https://devicon.dev/">Devicon</OffcanvasLink> <i class="devicon-devicon-plain"></i></OffcanvasText>
         <OffcanvasText><OffcanvasLink link="https://fonts.google.com/">Google Fonts</OffcanvasLink> <i class="devicon-google-plain"></i></OffcanvasText>
-        <OffcanvasText><OffcanvasLink link="https://github.com/catppuccin/palette">Catppuccin Palettes</OffcanvasLink> <i class="bi bi-cookie"></i></OffcanvasText>
+        <OffcanvasText><OffcanvasLink link="https://github.com/catppuccin/palette">Catppuccin Palettes</OffcanvasLink> <i class="bi bi-palette"></i></OffcanvasText>
     </Offcanvas>
 </template>
