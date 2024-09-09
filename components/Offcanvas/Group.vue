@@ -57,6 +57,7 @@ const defaultTheme = useStorage('defaultTheme', 'Default')
   
     <Offcanvas :id="'toolsOffcanvas'" :title="'Tools'" :icon="'bi-tools'" :prevOffcanvas="'menuOffcanvas'">
         <OffcanvasText><OffcanvasLink link="https://nuxt.com/">Nuxt 3</OffcanvasLink> <i class="devicon-nuxtjs-plain"></i></OffcanvasText>
+        <OffcanvasText><OffcanvasLink link="https://vueuse.org/">VueUse</OffcanvasLink> <i class="devicon-vuejs-plain"></i></OffcanvasText>
         <OffcanvasText><OffcanvasLink link="https://vuejs.org/">Vue.js 3</OffcanvasLink> <i class="devicon-vuejs-plain"></i></OffcanvasText>
         <OffcanvasText><OffcanvasLink link="https://getbootstrap.com/">Bootstrap 5</OffcanvasLink> <i class="devicon-bootstrap-plain"></i></OffcanvasText>
         <OffcanvasText><OffcanvasLink link="https://icons.getbootstrap.com/">Bootstrap Icons</OffcanvasLink> <i class="devicon-bootstrap-plain"></i></OffcanvasText>
