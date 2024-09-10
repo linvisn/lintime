@@ -11,9 +11,6 @@ const defaultTheme = useStorage('defaultTheme', 'Default')
         <OffcanvasButton data-bs-toggle="offcanvas" href="#customizationOffcanvas" aria-controls="customizationOffcanvas">
             <i class="bi bi-palette-fill"></i> Customization
         </OffcanvasButton>
-        <OffcanvasButton data-bs-toggle="offcanvas" href="#toolsOffcanvas" aria-controls="toolsOffcanvas">
-            <i class="bi bi-tools"></i> Used Tools
-        </OffcanvasButton>
         <OffcanvasButton data-bs-toggle="offcanvas" href="#aboutOffcanvas" aria-controls="aboutOffcanvas">
             <i class="bi bi-info-circle-fill"></i> About
         </OffcanvasButton>
@@ -53,16 +50,5 @@ const defaultTheme = useStorage('defaultTheme', 'Default')
         <OffcanvasRadio :id="'radio-defaultTheme-default'" v-model="defaultTheme" :value="'Default'">Default</OffcanvasRadio>
         <OffcanvasRadio :id="'radio-defaultTheme-mocha'" v-model="defaultTheme" :value="'Mocha'">Mocha</OffcanvasRadio>
         <OffcanvasRadio :id="'radio-defaultTheme-mf'" v-model="defaultTheme" :value="'Midnight Fireplace'">Midnight Fireplace</OffcanvasRadio>
-    </Offcanvas>
-  
-    <Offcanvas :id="'toolsOffcanvas'" :title="'Tools'" :icon="'bi-tools'" :prevOffcanvas="'menuOffcanvas'">
-        <OffcanvasText><OffcanvasLink link="https://nuxt.com/">Nuxt 3</OffcanvasLink> <i class="devicon-nuxtjs-plain"></i></OffcanvasText>
-        <OffcanvasText><OffcanvasLink link="https://vueuse.org/">VueUse</OffcanvasLink> <i class="devicon-vuejs-plain"></i></OffcanvasText>
-        <OffcanvasText><OffcanvasLink link="https://vuejs.org/">Vue.js 3</OffcanvasLink> <i class="devicon-vuejs-plain"></i></OffcanvasText>
-        <OffcanvasText><OffcanvasLink link="https://getbootstrap.com/">Bootstrap 5</OffcanvasLink> <i class="devicon-bootstrap-plain"></i></OffcanvasText>
-        <OffcanvasText><OffcanvasLink link="https://icons.getbootstrap.com/">Bootstrap Icons</OffcanvasLink> <i class="devicon-bootstrap-plain"></i></OffcanvasText>
-        <OffcanvasText><OffcanvasLink link="https://devicon.dev/">Devicon</OffcanvasLink> <i class="devicon-devicon-plain"></i></OffcanvasText>
-        <OffcanvasText><OffcanvasLink link="https://fonts.google.com/">Google Fonts</OffcanvasLink> <i class="devicon-google-plain"></i></OffcanvasText>
-        <OffcanvasText><OffcanvasLink link="https://github.com/catppuccin/palette">Catppuccin Palettes</OffcanvasLink> <i class="bi bi-palette"></i></OffcanvasText>
     </Offcanvas>
 </template>
