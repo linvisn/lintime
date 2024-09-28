@@ -1,6 +1,9 @@
 <script setup>
-import { ref, watch, onMounted } from 'vue'
 import tabataSound from '~/assets/tabataSound.mp3'
+
+definePageMeta({
+  title: 'Tabata'
+})
 
 const secondsForWork = ref(0)
 const secondsForRest = ref(0)

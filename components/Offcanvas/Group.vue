@@ -23,7 +23,7 @@ const defaultTheme = useStorage('defaultTheme', 'Default')
 
     <Offcanvas :id="'aboutOffcanvas'" :title="'About'" :icon="'bi-info-circle-fill'" :prevOffcanvas="'menuOffcanvas'">
         <OffcanvasText>
-        A simple app with usual Timer, Tabata Timer and Stopwatch, written in <OffcanvasLink link="https://nuxt.com/">Nuxt 3</OffcanvasLink> <i class="devicon-nuxtjs-plain"></i>
+        A simple app with usual Timer, Tabata Timer and Stopwatch, created with <OffcanvasLink link="https://nuxt.com/">Nuxt 3</OffcanvasLink> <i class="devicon-nuxtjs-plain"></i>
         </OffcanvasText>
         <OffcanvasText>
             Made by <OffcanvasLink link="https://github.com/linvisn">linvisn</OffcanvasLink> <i class="bi bi-github"></i> on September 9th 2024

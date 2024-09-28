@@ -1,6 +1,9 @@
 <script setup>
-import { ref, watch, onMounted } from 'vue'
 import timerSound from '~/assets/timerSound.mp3'
+
+definePageMeta({
+  title: 'Timer'
+})
 
 const seconds = ref(0)
 const minutes = ref(0)
