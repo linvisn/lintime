@@ -78,20 +78,22 @@ const resetTimer = () => {
 
         <PageContent>
             <PageTime>
-                <span>
-                    <span v-if="Math.floor(time / 3600) > 0">{{ String(Math.floor(time / 3600)).padStart(2, '0') }}:</span>{{ String(Math.floor((time % 3600) / 60)).padStart(2, '0') }}:{{ String(time % 60).padStart(2, '0') }}
-                </span>
-                <i v-if="isPaused" class="bi bi-pause-btn-fill"></i>
+                <div class="d-flex gap-3">
+                    <span>
+                        <span v-if="Math.floor(time / 3600) > 0">{{ String(Math.floor(time / 3600)).padStart(2, '0') }}:</span>{{ String(Math.floor((time % 3600) / 60)).padStart(2, '0') }}:{{ String(time % 60).padStart(2, '0') }}
+                    </span>
+                    <i v-if="isPaused" class="bi bi-pause-btn-fill"></i>
+                </div>
             </PageTime>
 
             <PageInputGroup>
-                <PageInput v-model:isStarted="isStarted" v-model:value="hours" @keyup.enter="startTimer()">
+                <PageInput :inputClass="'rounded-start-1'" v-model:isStarted="isStarted" v-model:value="hours" @keyup.enter="startTimer()">
                     hours
                 </PageInput>
-                <PageInput v-model:isStarted="isStarted" v-model:value="minutes" @keyup.enter="startTimer()">
+                <PageInput :inputClass="'border-start-0 border-end-0'" v-model:isStarted="isStarted" v-model:value="minutes" @keyup.enter="startTimer()">
                     minutes
                 </PageInput>
-                <PageInput v-model:isStarted="isStarted" v-model:value="seconds" @keyup.enter="startTimer()">
+                <PageInput :inputClass="'rounded-end-1'" v-model:isStarted="isStarted" v-model:value="seconds" @keyup.enter="startTimer()">
                     seconds
                 </PageInput>
             </PageInputGroup>

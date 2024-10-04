@@ -1,4 +1,8 @@
 <script setup>
+defineProps({
+    inputClass: String
+})
+
 const isStarted = defineModel('isStarted')
 const value = defineModel('value')
 </script>
@@ -9,11 +13,11 @@ const value = defineModel('value')
             <span class="opacity-50 col-12 col-lg-5">
                 <slot />
             </span>
-            <span class="reset-value col-12 col-lg-4 py-1 text-center" v-if="!isStarted" @click="value = 0">
+            <span class="reset-value col-12 col-lg-4 py-1 text-center rounded-top-1" v-if="!isStarted" @click="value = 0">
                 <i class="bi bi-arrow-clockwise"></i>
             </span>
         </div>
-        <input class="input w-100 px-4 py-1 border" :class="{ 'input-active': isStarted }" type="number" v-model="value" min="0" :disabled="isStarted">
+        <input class="input w-100 px-4 py-1 border" :class="[ { 'input-active': isStarted }, inputClass ]" type="number" v-model="value" min="0" :disabled="isStarted">
     </span>
 </template>
 

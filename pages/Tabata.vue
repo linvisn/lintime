@@ -100,20 +100,22 @@ const playSound = () => {
 
         <PageContent>
             <PageTime class="px-4 rounded-3" :class="{ 'work': isWork, 'rest': !isWork }" v-if="isStarted">
-                {{ String(Math.floor((time % 3600) / 60)).padStart(2, '0') }}:{{ String(time % 60).padStart(2, '0') }}
-                <span class="fs-1 fw-semibold opacity-75" v-if="isWork"> work </span>
-                <span class="fs-1 fw-semibold opacity-75" v-if="!isWork"> rest </span>
-                <i v-if="isPaused" class="bi bi-pause-btn-fill"></i>
+                <div class="d-flex gap-3">
+                    {{ String(Math.floor((time % 3600) / 60)).padStart(2, '0') }}:{{ String(time % 60).padStart(2, '0') }}
+                    <i v-if="isPaused" class="bi bi-pause-btn-fill"></i>
+                </div>
+                <div class="fs-1 fw-semibold opacity-75" v-if="isWork"> work </div>
+                <div class="w-100 fs-1 fw-semibold opacity-75" v-if="!isWork"> rest </div>
                 <div class="w-100 fs-1 fw-bold">Round {{ currentRound }} of {{ rounds }}</div>
             </PageTime>
             <PageInputGroup>
-                <PageInput v-model:isStarted="isStarted" v-model:value="secondsForWork" @keyup.enter="startTimer()">
+                <PageInput :inputClass="'rounded-start-1'" v-model:isStarted="isStarted" v-model:value="secondsForWork" @keyup.enter="startTimer()">
                     seconds for work
                 </PageInput>
-                <PageInput v-model:isStarted="isStarted" v-model:value="secondsForRest" @keyup.enter="startTimer()">
+                <PageInput :inputClass="'border-start-0 border-end-0'" v-model:isStarted="isStarted" v-model:value="secondsForRest" @keyup.enter="startTimer()">
                     seconds for rest
                 </PageInput>
-                <PageInput v-model:isStarted="isStarted" v-model:value="rounds" @keyup.enter="startTimer()">
+                <PageInput :inputClass="'rounded-end-1'" v-model:isStarted="isStarted" v-model:value="rounds" @keyup.enter="startTimer()">
                     rounds
                 </PageInput>
             </PageInputGroup>

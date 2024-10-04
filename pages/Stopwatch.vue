@@ -92,10 +92,13 @@ const countTimeElapsed = (value, time) => {
 
         <PageContent>
             <PageTime>
-                {{ formatTime(ms) }} <i v-if="isPaused" class="bi bi-pause-btn-fill"></i>
-                <span class="laps-amount d-flex d-sm-inline-flex justify-content-center gap-1 px-3 fs-1 fw-semibold text-center rounded-2" v-if="isStarted">
-                    {{ lapsAmount }} laps
-                </span>
+                {{ formatTime(ms) }}
+                <div class="d-flex gap-3 align-items-center">
+                    <div v-if="isStarted" class="laps-amount d-flex gap-3 px-3 py-1 fs-1 fw-semibold text-center rounded-2">
+                        {{ lapsAmount }} laps
+                    </div>
+                    <i v-if="isPaused" class="bi bi-pause-btn-fill"></i>
+                </div>
             </PageTime>
 
             <PageButtonGroup>
