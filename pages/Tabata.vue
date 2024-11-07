@@ -100,14 +100,12 @@ const playSound = () => {
 
         <PageContent>
             <PageTime class="px-4 rounded-3" :class="{ 'work': isWork, 'rest': !isWork }" v-if="isStarted">
-                <div class="d-flex gap-3">
-                    {{ String(Math.floor((time % 3600) / 60)).padStart(2, '0') }}:{{ String(time % 60).padStart(2, '0') }}
-                    <i v-if="isPaused" class="bi bi-pause-btn-fill"></i>
-                </div>
-                <div class="fs-1 fw-semibold opacity-75" v-if="isWork"> work </div>
-                <div class="w-100 fs-1 fw-semibold opacity-75" v-if="!isWork"> rest </div>
-                <div class="w-100 fs-1 fw-bold">Round {{ currentRound }} of {{ rounds }}</div>
+                {{ String(Math.floor((time % 3600) / 60)).padStart(2, '0') }}:{{ String(time % 60).padStart(2, '0') }}
+                <div class="fs-2 fw-semibold opacity-75" v-if="isWork"> work </div>
+                <div class="fs-2 fw-semibold opacity-75" v-if="!isWork"> rest </div>
+                <div class="fs-1 fw-bold">Round {{ currentRound }} of {{ rounds }}</div>
             </PageTime>
+
             <PageInputGroup>
                 <PageInput :inputClass="'rounded-start-1'" v-model:isStarted="isStarted" v-model:value="secondsForWork" @keyup.enter="startTimer()">
                     seconds for work
@@ -119,9 +117,11 @@ const playSound = () => {
                     rounds
                 </PageInput>
             </PageInputGroup>
+            
             <PageButtonGroup>
                 <PageButton v-if="!isStarted" @click="startTabata()"><i class="bi bi-caret-right-fill"></i> Start Tabata</PageButton>
-                <PageButton v-if="isStarted" @click="isPaused = !isPaused"><i class="bi bi-pause-fill"></i> Pause Tabata</PageButton>
+                <PageButton v-if="isStarted && !isPaused" @click="isPaused = !isPaused"><i class="bi bi-pause-fill"></i> Pause Tabata</PageButton>
+                <PageButton v-if="isStarted && isPaused" @click="isPaused = !isPaused"><i class="bi bi-play-fill"></i> Resume Tabata</PageButton>
                 <PageButton v-if="isStarted && isPaused" @click="resetTabata()"><i class="bi bi-arrow-clockwise"></i> Reset Tabata</PageButton>
                 <PageButton v-if="isStarted" @click="skipPhase()"><i class="bi bi-skip-end-fill"></i> Skip Phase</PageButton>
             </PageButtonGroup>

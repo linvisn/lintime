@@ -78,11 +78,8 @@ const resetTimer = () => {
 
         <PageContent>
             <PageTime>
-                <div class="d-flex gap-3">
-                    <span>
-                        <span v-if="Math.floor(time / 3600) > 0">{{ String(Math.floor(time / 3600)).padStart(2, '0') }}:</span>{{ String(Math.floor((time % 3600) / 60)).padStart(2, '0') }}:{{ String(time % 60).padStart(2, '0') }}
-                    </span>
-                    <i v-if="isPaused" class="bi bi-pause-btn-fill"></i>
+                <div>
+                    <span v-if="Math.floor(time / 3600) > 0">{{ String(Math.floor(time / 3600)).padStart(2, '0') }}:</span>{{ String(Math.floor((time % 3600) / 60)).padStart(2, '0') }}:{{ String(time % 60).padStart(2, '0') }}
                 </div>
             </PageTime>
 
@@ -99,9 +96,10 @@ const resetTimer = () => {
             </PageInputGroup>
 
             <PageButtonGroup>
-                <PageButton v-if="!isStarted" @click="startTimer"><i class="bi bi-caret-right-fill"></i> Start Timer</PageButton>
-                <PageButton v-if="isStarted" @click="resetTimer"><i class="bi bi-arrow-clockwise"></i> Reset Timer</PageButton>
-                <PageButton v-if="isStarted" @click="isPaused = !isPaused"><i class="bi bi-pause-fill"></i> Pause Timer</PageButton>
+                <PageButton v-if="!isStarted" @click="startTimer()"><i class="bi bi-caret-right-fill"></i> Start Timer</PageButton>
+                <PageButton v-if="isStarted && !isPaused" @click="isPaused = !isPaused"><i class="bi bi-pause-fill"></i> Pause Timer</PageButton>
+                <PageButton v-if="isStarted && isPaused" @click="isPaused = !isPaused"><i class="bi bi-play-fill"></i> Resume Timer</PageButton>
+                <PageButton v-if="isStarted" @click="resetTimer()"><i class="bi bi-arrow-clockwise"></i> Reset Timer</PageButton>
             </PageButtonGroup>
         </PageContent>
     </div>

@@ -93,17 +93,15 @@ const countTimeElapsed = (value, time) => {
         <PageContent>
             <PageTime>
                 {{ formatTime(ms) }}
-                <div class="d-flex gap-3 align-items-center">
-                    <div v-if="isStarted" class="laps-amount d-flex gap-3 px-3 py-1 fs-1 fw-semibold text-center rounded-2">
-                        {{ lapsAmount }} laps
-                    </div>
-                    <i v-if="isPaused" class="bi bi-pause-btn-fill"></i>
+                <div v-if="isStarted" class="laps-amount mt-1 px-3 fs-2 fw-semibold text-center rounded-2">
+                    {{ lapsAmount }} lap<span v-if="lapsAmount > 1">s</span>
                 </div>
             </PageTime>
 
             <PageButtonGroup>
                 <PageButton v-if="!isStarted" @click="startStopwatch()"><i class="bi bi-caret-right-fill"></i> Start Stopwatch</PageButton>
-                <PageButton v-if="isStarted" @click="isPaused ? startStopwatch() : pauseStopwatch()"><i class="bi bi-pause-fill"></i> Pause Stopwatch</PageButton>
+                <PageButton v-if="isStarted && !isPaused" @click="pauseStopwatch()"><i class="bi bi-pause-fill"></i> Pause Stopwatch</PageButton>
+                <PageButton v-if="isStarted && isPaused" @click="startStopwatch()"><i class="bi bi-play-fill"></i> Resume Stopwatch</PageButton>
                 <PageButton v-if="isStarted && isPaused" @click="resetStopwatch()"><i class="bi bi-arrow-clockwise"></i> Reset Stopwatch</PageButton>
                 <PageButton v-if="isStarted" @click="newLap()"><i class="bi bi-stopwatch-fill"></i> Set a Lap</PageButton>
             </PageButtonGroup>
