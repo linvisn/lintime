@@ -7,7 +7,7 @@ const title = computed(() => `${route.meta.title} - linTime`)
 useHead({
   title: title,
   link: [
-    { rel: 'icon', href: '/linTime/logo.png' }
+    { rel: 'icon', href: '/linTime/bi-clock-fill.svg' }
   ]
 })
 
