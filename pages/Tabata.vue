@@ -1,10 +1,6 @@
 <script setup>
 import tabataSound from '~/assets/tabataSound.mp3'
 
-definePageMeta({
-  title: 'Tabata'
-})
-
 const secondsForWork = ref(0)
 const secondsForRest = ref(0)
 const rounds = ref(0)

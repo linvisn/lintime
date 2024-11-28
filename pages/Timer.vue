@@ -1,10 +1,6 @@
 <script setup>
 import timerSound from '~/assets/timerSound.mp3'
 
-definePageMeta({
-  title: 'Timer'
-})
-
 const seconds = ref(0)
 const minutes = ref(0)
 const hours = ref(0)

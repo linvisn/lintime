@@ -1,10 +1,6 @@
 <script setup>
 import stopwatchSound from '~/assets/stopwatchSound.mp3'
 
-definePageMeta({
-  title: 'Stopwatch'
-})
-
 const ms = ref(0)
 const isStarted = ref(false)
 const isPaused = ref(false)

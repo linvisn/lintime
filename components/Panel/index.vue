@@ -1,17 +1,19 @@
 <script setup>
+import { useFavicon } from '@vueuse/core'
+
 const theme = useDefineTheme()
 </script>
 
 <template>
     <div class="panel p-2 p-lg-3 border-end d-flex flex-column justify-content-between" :class="theme">
         <div>
-            <PanelLink :to="'/timer'">
+            <PanelLink :to="'/timer'" @click="useFavicon(`/linTime/Timer.svg`)">
                 <i class="bi bi-hourglass-split"></i> <span class="d-none d-lg-inline">Timer</span>
             </PanelLink>
-            <PanelLink :to="'/stopwatch'">
+            <PanelLink :to="'/stopwatch'" @click="useFavicon(`/linTime/Stopwatch.svg`)">
                 <i class="bi bi-stopwatch"></i> <span class="d-none d-lg-inline">Stopwatch</span>
             </PanelLink>
-            <PanelLink :to="'/tabata'">
+            <PanelLink :to="'/tabata'" @click="useFavicon(`/linTime/Tabata.svg`)">
                 <i class="bi bi-repeat"></i> <span class="d-none d-lg-inline">Tabata</span>
             </PanelLink>
         </div>

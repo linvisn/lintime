@@ -2,13 +2,8 @@
 import { useStorage } from '@vueuse/core'
 
 const route = useRoute()
-const title = computed(() => `${route.meta.title} - linTime`)
-
 useHead({
-  title: title,
-  link: [
-    { rel: 'icon', href: '/linTime/bi-clock-fill.svg' }
-  ]
+  title: computed(() => `${route.name} - linTime`)
 })
 
 const defaultFont = useStorage('defaultFont', 'Raleway')
