@@ -29,7 +29,7 @@ export default defineNuxtConfig({
     }
   },
   css: ['~/assets/main.css'],
-  modules: ["@nuxtjs/google-fonts"],
+  modules: ['@nuxtjs/google-fonts', '@vueuse/nuxt'],
   googleFonts: {
     families: {
       'Raleway': '100..900',
