@@ -6,7 +6,7 @@ definePageMeta({
     function (to, from) {
       const defaultPage = useStorage('defaultPage', '/timer')
 
-      useFavicon(`/linTime${defaultPage.value}.svg`)
+      useFavicon(`${defaultPage.value}.svg`)
       return navigateTo(defaultPage.value)
     },
   ],

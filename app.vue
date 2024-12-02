@@ -3,7 +3,7 @@ import { useStorage } from '@vueuse/core'
 
 const route = useRoute()
 useHead({
-  title: computed(() => `${route.name} - linTime`)
+  title: computed(() => `${route.name} - lintime`)
 })
 
 const defaultFont = useStorage('defaultFont', 'Raleway')
