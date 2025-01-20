@@ -42,7 +42,7 @@ watch([secondsForWork, secondsForRest, rounds], ([newSecondsForWork, newSecondsF
 })
 
 const startTabata = () => {
-    if(secondsForWork.value >= 5 && secondsForRest.value >= 5 && secondsForWork.value <= 600 && secondsForRest.value <= 600 && rounds.value > 0) {
+    if(secondsForWork.value > 0 && secondsForRest.value > 0 && rounds.value > 0) {
         isStarted.value = true
         time.value = 5
         tabata = setInterval(() => {
@@ -56,7 +56,7 @@ const startTabata = () => {
         }, 1000);
     }
     else {
-        alert("An amount of time for both work and rest should be greater than 5 seconds and less than 10 minutes. Also there should be at least 1 round.")
+        alert("An amount of time for both work and rest should be greater than 1 second. Also there should be at least 1 round.")
     }
 }
 const resetTabata = () => {

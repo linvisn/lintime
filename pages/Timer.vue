@@ -41,7 +41,7 @@ watch([seconds, minutes, hours], ([newSeconds, newMinutes, newHours]) => {
 })
 
 const startTimer = () => {
-    if(time.value > 0 && time.value <= 120 * 3600) {
+    if(time.value > 0) {
         isStarted.value = true
         timer = setInterval(() => {
             if(!isPaused.value) {
@@ -56,7 +56,7 @@ const startTimer = () => {
         }, 1000);
     }
     else {
-        alert("An amount of time should be greater than 1 second and less than 120 hours.")
+        alert("An amount of time should be greater than 1 second.")
     }
 }
 const resetTimer = () => {
