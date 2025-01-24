@@ -23,7 +23,7 @@ const defaultTheme = useStorage('defaultTheme', 'Default')
 
     <Offcanvas :id="'aboutOffcanvas'" :title="'About'" :icon="'bi-info-circle-fill'" :prevOffcanvas="'menuOffcanvas'">
         <OffcanvasText>
-        A simple app with usual Timer, Tabata Timer and Stopwatch, created with <OffcanvasLink link="https://nuxt.com/">Nuxt 3</OffcanvasLink> <i class="devicon-nuxtjs-plain"></i>
+        A simple app with usual Timer, Interval Timer and Stopwatch, created with <OffcanvasLink link="https://nuxt.com/">Nuxt 3</OffcanvasLink> <i class="devicon-nuxtjs-plain"></i>
         </OffcanvasText>
         <OffcanvasText>
             Made by <OffcanvasLink link="https://github.com/linvisn">linvisn</OffcanvasLink> <i class="bi bi-github"></i> on September 9th 2024
@@ -35,7 +35,7 @@ const defaultTheme = useStorage('defaultTheme', 'Default')
         
         <OffcanvasRadio :id="'radio-defaultPage-timer'" v-model="defaultPage" :value="'/timer'">Timer</OffcanvasRadio>
         <OffcanvasRadio :id="'radio-defaultPage-stopwatch'" v-model="defaultPage" :value="'/stopwatch'">Stopwatch</OffcanvasRadio>
-        <OffcanvasRadio :id="'radio-defaultPage-tabata'" v-model="defaultPage" :value="'/tabata'">Tabata</OffcanvasRadio>
+        <OffcanvasRadio :id="'radio-defaultPage-interval'" v-model="defaultPage" :value="'/interval'">Interval</OffcanvasRadio>
 
         <OffcanvasText>Choose default font:</OffcanvasText>
         <OffcanvasRadio :id="'radio-defaultFont-raleway'" :style="{ 'font-family': 'Raleway' }" v-model="defaultFont" :value="'Raleway'">Raleway</OffcanvasRadio>

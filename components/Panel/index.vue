@@ -13,8 +13,8 @@ const theme = useDefineTheme()
             <PanelLink :to="'/stopwatch'" @click="useFavicon('/stopwatch.svg')">
                 <i class="bi bi-stopwatch"></i> <span class="d-none d-lg-inline">Stopwatch</span>
             </PanelLink>
-            <PanelLink :to="'/tabata'" @click="useFavicon('/tabata.svg')">
-                <i class="bi bi-repeat"></i> <span class="d-none d-lg-inline">Tabata</span>
+            <PanelLink :to="'/interval'" @click="useFavicon('/interval.svg')">
+                <i class="bi bi-repeat"></i> <span class="d-none d-lg-inline">Interval</span>
             </PanelLink>
         </div>
 
