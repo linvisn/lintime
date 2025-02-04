@@ -1,6 +1,5 @@
 <script setup>
 defineProps({
-    inputClass: String,
     isRemovable: Boolean
 })
 defineEmits(['removeValue'])
@@ -11,17 +10,17 @@ const value = defineModel('value')
 </script>
 
 <template>
-    <span class="input-item col-12 fs-3 mx-4">
+    <span class="input-item col-12 fs-3 mx-4" :class="{ 'disabled': isDisabled }">
         <div class="d-flex align-items-center row">
             <span class="col-3 opacity-75 fs-5 fw-bold">
                 <slot />
             </span>
             <span class="col-7 row">
-                <input class="input col px-4 py-1 border rounded-start-1" :class="[ { 'input-active rounded-end-1': isStarted || isDisabled }, inputClass ]" type="number" v-model="value" min="0" :disabled="isStarted || isDisabled">
-                <span class="value reset-value col-3 py-1 border text-center" :class="{ 'rounded-end-1': !isRemovable }" v-if="!isStarted" @click="value = 0">
+                <input class="input col px-4 py-1 border rounded-start-1" :class="{ 'input-active': isStarted && !isDisabled, 'rounded-end-1': isStarted || isDisabled }" type="number" v-model="value" min="1" :disabled="isStarted || isDisabled">
+                <span class="value reset-value col-3 py-1 border text-center" :class="{ 'rounded-end-1': !isRemovable }" v-if="!isStarted && !isDisabled" @click="value = 0">
                     <i class="bi bi-arrow-clockwise"></i>
                 </span>
-                <span class="value remove-value col-3 py-1 border text-center rounded-end-1" v-if="!isStarted && isRemovable" @click="$emit('removeValue')">
+                <span class="value remove-value col-3 py-1 border text-center rounded-end-1" v-if="!isStarted && isRemovable && !isDisabled" @click="$emit('removeValue')">
                     <i class="bi bi-x-lg"></i>
                 </span>
             </span>
@@ -30,6 +29,10 @@ const value = defineModel('value')
 </template>
 
 <style scoped>
+.disabled {
+    opacity: 0.5;
+}
+
 .input {
     border-color: rgba(255, 255, 255, 0.5) !important;
 
@@ -67,28 +70,13 @@ const value = defineModel('value')
 }
 
 .reset-value {
-    border-color: rgb(37, 163, 121) !important;
+    border-color: rgb(53, 197, 149) !important;
 
     background-color: rgb(41, 122, 95);
 }
-.reset-value:hover {
-    background-color: rgb(37, 163, 121);
-}
-.mocha .reset-value {
-    background-color: rgb(var(--ctp-mocha-sky-rgb));
-}
-.mocha .reset-value:hover {
-    background-color: rgb(var(--ctp-mocha-blue-rgb));
-}
-.midnight-fireplace .reset-value {
-    background-color: rgb(165, 18, 18);
-}
-.midnight-fireplace .reset-value:hover {
-    background-color: rgb(204, 33, 33);
-}
 
 .remove-value {
-    border-color: rgb(163, 108, 37) !important;
+    border-color: rgb(204, 138, 52) !important;
 
     background-color: rgb(122, 77, 41);
 }

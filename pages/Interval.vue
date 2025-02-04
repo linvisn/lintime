@@ -10,10 +10,6 @@ const intervals = ref([
     {
         value: 0,
         isRemovable: false
-    },
-    {
-        value: 1,
-        isRemovable: true
     }
 ])
 const currentInterval = ref(0)

@@ -18,7 +18,7 @@ const value = defineModel('value')
                 <i class="bi bi-arrow-clockwise"></i>
             </span>
         </div>
-        <input class="input w-100 px-4 py-1 border" :class="[ { 'input-active': isStarted || isDisabled }, inputClass ]" type="number" v-model="value" min="0" :disabled="isStarted || isDisabled">
+        <input class="input w-100 px-4 py-1 border" :class="[ { 'input-active': isStarted || isDisabled }, inputClass ]" type="number" v-model="value" min="1" :disabled="isStarted || isDisabled">
     </span>
 </template>
 
@@ -56,20 +56,6 @@ const value = defineModel('value')
     cursor: pointer;
 }
 .reset-value:hover {
-    background-color: rgb(37, 163, 121);
-
     opacity: 1;
-}
-.mocha .reset-value {
-    background-color: rgb(var(--ctp-mocha-sky-rgb));
-}
-.mocha .reset-value:hover {
-    background-color: rgb(var(--ctp-mocha-blue-rgb));
-}
-.midnight-fireplace .reset-value {
-    background-color: rgb(165, 18, 18);
-}
-.midnight-fireplace .reset-value:hover {
-    background-color: rgb(204, 33, 33);
 }
 </style>
