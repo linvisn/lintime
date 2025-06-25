@@ -9,8 +9,6 @@ const isStarted = ref(false)
 const isPaused = ref(false)
 let timer = null
 
-const theme = useDefineTheme()
-
 onMounted(() => {
     window.addEventListener('beforeunload', (event) => {
         if(isStarted.value) {
@@ -69,7 +67,7 @@ const resetTimer = () => {
 </script>
 
 <template>
-    <div class="page" :class="theme">
+    <Page>
         <PageHeader>Timer</PageHeader>
 
         <PageContent>
@@ -98,9 +96,5 @@ const resetTimer = () => {
                 <PageButton v-if="isStarted" @click="resetTimer()"><i class="bi bi-arrow-clockwise"></i> Reset Timer</PageButton>
             </PageButtonGroup>
         </PageContent>
-    </div>
+    </Page>
 </template>
-
-<style scoped>
-@import url("~/assets/page.css");
-</style>

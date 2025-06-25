@@ -10,8 +10,6 @@ let elapsedTime = 0
 let lapsAmount = 0
 let stopwatch = null
 
-const theme = useDefineTheme()
-
 onMounted(() => {
     window.addEventListener('beforeunload', (event) => {
         if(isStarted.value) {
@@ -83,7 +81,7 @@ const countTimeElapsed = (value, time) => {
 </script>
 
 <template>
-    <div class="page" :class="theme">
+    <Page>
         <PageHeader>Stopwatch</PageHeader>
 
         <PageContent>
@@ -106,12 +104,10 @@ const countTimeElapsed = (value, time) => {
                 <PageLap v-for="lap in laps" :key="lap.id" :id="lap.id" :timeElapsed="lap.timeElapsed" :timeElapsedFromStart="lap.timeElapsedFromStart" :timeElapsedFromStartValue="lap.timeElapsedFromStartValue" />
             </div>
         </PageContent>
-    </div>
+    </Page>
 </template>
 
 <style scoped>
-@import url("~/assets/page.css");
-
 .laps-amount {
     height: fit-content !important;
 

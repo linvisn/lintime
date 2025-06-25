@@ -21,8 +21,6 @@ const isPaused = ref(false)
 const switchColor = ref(false)
 let interval = null
 
-const theme = useDefineTheme()
-
 onMounted(() => {
     window.addEventListener('beforeunload', (event) => {
         if(isStarted.value) {
@@ -127,7 +125,7 @@ const playSound = () => {
 </script>
 
 <template>
-    <div class="page" :class="theme">
+    <Page>
         <PageHeader>Interval Timer</PageHeader>
 
         <PageContent>
@@ -160,12 +158,10 @@ const playSound = () => {
                 </PageInputColumnGroup>
             </div>
         </PageContent>
-    </div>
+    </Page>
 </template>
 
 <style scoped>
-@import url("~/assets/page.css");
-
 .work {
     background: rgba(255, 0, 0, 0.5);
 }

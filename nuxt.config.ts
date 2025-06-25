@@ -27,7 +27,6 @@ export default defineNuxtConfig({
       ]
     }
   },
-  css: ['~/assets/main.css'],
   modules: ['@nuxtjs/google-fonts', '@vueuse/nuxt'],
   googleFonts: {
     families: {

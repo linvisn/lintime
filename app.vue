@@ -19,3 +19,24 @@ const defaultFont = useStorage('defaultFont', 'Raleway')
     </NuxtLayout>
   </div>
 </template>
+
+<style>
+@import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
+
+* {
+    padding: 0 !important;
+    margin: 0 !important;
+
+    font-size: inherit !important;
+    color: white !important;
+    text-decoration: none !important;
+    user-select: none !important;
+
+    border: none !important;
+    outline: none !important;
+
+    box-shadow: none !important;
+
+    transition: all 0.25s ease !important;
+}
+</style>
