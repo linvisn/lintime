@@ -1,6 +1,6 @@
 import { useStorage } from '@vueuse/core'
 
-export function useDefineTheme() {
+export function useTheme() {
     const defaultTheme = useStorage('defaultTheme', 'Default')
   
     const theme = computed(() => ({

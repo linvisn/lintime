@@ -1,35 +1,52 @@
 <script setup>
 import { useFavicon } from '@vueuse/core'
 
-const theme = useDefineTheme()
+const favicon = useFavicon()
+const theme = useTheme()
+const isPortrait = useOrientation()
+
+const setFavicon = (icon) => {
+    favicon.value = icon
+}
 </script>
 
 <template>
-    <div class="panel p-2 p-lg-3 border-end d-flex flex-column justify-content-between" :class="theme">
-        <div>
-            <PanelLink :to="'/timer'" @click="useFavicon('/timer.svg')">
+    <div class="panel d-flex" 
+    :class="[ { 'flex-row border-top': isPortrait, 'flex-column justify-content-between p-2 p-lg-3 border-end': !isPortrait }, theme ]" 
+    :style="{ width: isPortrait ? '100%' : '20%', height: isPortrait ? 'auto' : '100%' }">
+        <template v-if="isPortrait">
+            <PanelLink :to="'/timer'" @click="setFavicon('/timer.svg')">
                 <i class="bi bi-hourglass-split"></i> <span class="d-none d-lg-inline">Timer</span>
             </PanelLink>
-            <PanelLink :to="'/stopwatch'" @click="useFavicon('/stopwatch.svg')">
+            <PanelLink :to="'/stopwatch'" @click="setFavicon('/stopwatch.svg')">
                 <i class="bi bi-stopwatch"></i> <span class="d-none d-lg-inline">Stopwatch</span>
             </PanelLink>
-            <PanelLink :to="'/interval'" @click="useFavicon('/interval.svg')">
+            <PanelLink :to="'/interval'" @click="setFavicon('/interval.svg')">
                 <i class="bi bi-repeat"></i> <span class="d-none d-lg-inline">Interval</span>
             </PanelLink>
-        </div>
+        </template>
+        <template v-else>
+            <div>
+                <PanelLink :to="'/timer'" @click="setFavicon('/timer.svg')">
+                <i class="bi bi-hourglass-split"></i> <span class="d-none d-lg-inline">Timer</span>
+                </PanelLink>
+                <PanelLink :to="'/stopwatch'" @click="setFavicon('/stopwatch.svg')">
+                <i class="bi bi-stopwatch"></i> <span class="d-none d-lg-inline">Stopwatch</span>
+                </PanelLink>
+                <PanelLink :to="'/interval'" @click="setFavicon('/interval.svg')">
+                <i class="bi bi-repeat"></i> <span class="d-none d-lg-inline">Interval</span>
+                </PanelLink>
+            </div>
+        </template>
 
-        <div>
-            <PanelButton data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
-                <i class="bi bi-menu-app"></i>
-            </PanelButton>
-        </div>
+        <PanelButton data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
+            <i class="bi bi-menu-app"></i> <span class="d-none d-lg-inline">Menu</span>
+        </PanelButton>
     </div>
 </template>
 
 <style scoped>
 .panel {
-    width: 20% !important;
-
     border-color: rgba(255, 255, 255, 0.25);
 
     background-color: rgb(30, 48, 48);

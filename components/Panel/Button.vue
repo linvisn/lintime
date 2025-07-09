@@ -1,9 +1,11 @@
 <script setup>
-const theme = useDefineTheme()
+const theme = useTheme()
+const isPortrait = useOrientation()
 </script>
 
 <template>
-    <div class="button d-flex justify-content-center gap-1 mb-1 p-1 fs-4 fw-medium rounded-3" :class="theme">
+    <div class="button d-flex align-items-center justify-content-center gap-2 p-1 fs-4 fw-medium" 
+    :class="[ { 'flex-grow-1': isPortrait, 'mb-1 rounded-3': !isPortrait }, theme ]">
         <slot />
     </div>
 </template>

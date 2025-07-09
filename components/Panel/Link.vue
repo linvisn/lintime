@@ -1,5 +1,9 @@
+<script setup>
+const isPortrait = useOrientation()
+</script>
+
 <template>
-    <NuxtLink>
+    <NuxtLink :class="{ 'flex-grow-1': isPortrait, 'mb-1 rounded-3': !isPortrait }">
         <PanelButton>
             <slot />
         </PanelButton>

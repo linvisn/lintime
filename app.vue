@@ -7,10 +7,13 @@ useHead({
 })
 
 const defaultFont = useStorage('defaultFont', 'Raleway')
+const isPortrait = useOrientation()
 </script>
 
 <template>
-  <div class="d-flex flex-row vh-100 vw-100" :style="{ 'font-family': defaultFont }">
+  <div class="d-flex vh-100 vw-100" 
+  :style="{ 'font-family': defaultFont }"
+  :class="{ 'flex-column-reverse': isPortrait , 'flex-row': !isPortrait }">
     <NuxtLayout>
       <Panel />
       <OffcanvasGroup />

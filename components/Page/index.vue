@@ -1,21 +1,17 @@
 <script setup>
-const theme = useDefineTheme()
+const theme = useTheme()
+const isPortrait = useOrientation()
 </script>
 
 <template>
-    <div class="page" :class="theme">
+    <div class="page d-flex flex-column align-items-center flex-grow-1" :class="theme"
+    :style="{ width: isPortrait ? '100%' : '80%', height: isPortrait ? 'auto' : '100%' }">
         <slot />
     </div>
 </template>
 
 <style scoped>
 .page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 80% !important;
-    
     background-color: rgb(59, 59, 59);
 
     overflow: auto;
