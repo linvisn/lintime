@@ -1,4 +1,4 @@
-﻿# lintime
+﻿# lintime (DEPRECATED)
 
 A simple app with usual Timer, Interval Timer and Stopwatch, created with Nuxt 3
 
@@ -28,3 +28,4 @@ A simple app with usual Timer, Interval Timer and Stopwatch, created with Nuxt 3
 
 ## Special Thanks
 - [@xNOTHlNGx](https://github.com/xNOTHlNGx) - for suggesting the idea of making an Interval Timer
+
